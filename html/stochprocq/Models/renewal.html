@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>stochprocq.Models.renewal API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>stochprocq.Models.renewal</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="stochprocq.Models.renewal.get_bio_renewal"><code class="name flex">
+<span>def <span class="ident">get_bio_renewal</span></span>(<span>n: int, l: float = 1, tau: float = 0.1, nv: float = 0.5, scale: float = 0.2) ‑> <a title="stochprocq.Models.renewal.RenewalProcess" href="#stochprocq.Models.renewal.RenewalProcess">RenewalProcess</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_bio_renewal(n: int, l: float = 1,
+                tau: float = .1, nv: float = 0.5,
+                scale: float = 0.2) -&gt; RenewalProcess:
+    &#34;&#34;&#34;
+    Generate the transition matrix for the bio-renewal process.
+
+    Parameters:
+    -------------------
+    l: float
+        The firing rate.
+    tau: float
+        The refractory period.
+    nv: float
+        The noise level.
+
+    Return:
+    ----------------
+    &#34;&#34;&#34;
+    fn = []
+
+    def u_ifn(t: float) -&gt; float:
+        &#39;&#39;&#39; (unleaky) integrate-and-fire neuron
+        &#39;&#39;&#39;
+        if t &lt;= tau:
+            return 0
+        const = np.sqrt(l / (2* np.pi * np.power(t-tau,3)))
+        phi = const * np.exp(-l * np.power(nv*(t-tau) - 1, 2) / 2 / (t-tau))
+        return phi
+
+    for i in range(n+2):
+        fn.append(count_approx(u_ifn, scale, i))
+
+    # renormalize
+    fn = np.array(fn) / np.sum(fn)
+
+    w = [1-fn[0]]
+    prob = [w[0]]
+
+    # Obtain the activation probability recursively
+    for i in range(1, n+1):
+        w.append(w[i-1] - fn[i])
+        prob.append(w[i]/w[i-1])
+
+    return RenewalProcess(prob[:-1])</code></pre>
+</details>
+<div class="desc"><p>Generate the transition matrix for the bio-renewal process.</p>
+<h2 id="parameters">Parameters:</h2>
+<p>l: float
+The firing rate.
+tau: float
+The refractory period.
+nv: float
+The noise level.</p>
+<h2 id="return">Return:</h2></div>
+</dd>
+<dt id="stochprocq.Models.renewal.get_uniform_renewal"><code class="name flex">
+<span>def <span class="ident">get_uniform_renewal</span></span>(<span>n: int) ‑> <a title="stochprocq.Models.renewal.RenewalProcess" href="#stochprocq.Models.renewal.RenewalProcess">RenewalProcess</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_uniform_renewal(n: int) -&gt; RenewalProcess:
+    &#34;&#34;&#34;
+    Generate a uniform renewal process.
+    &#34;&#34;&#34;
+    p = [1-1/(k+2) for k in range(n)][::-1]
+    return RenewalProcess(p)</code></pre>
+</details>
+<div class="desc"><p>Generate a uniform renewal process.</p></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="stochprocq.Models.renewal.RenewalProcess"><code class="flex name class">
+<span>class <span class="ident">RenewalProcess</span></span>
+<span>(</span><span>probs: list, cutoff: float = 1e-09)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RenewalProcess(HiddenMarkovModel):
+    &#34;&#34;&#34;
+    Renewal process class.
+    &#34;&#34;&#34;
+
+    def __init__(self, probs: list, cutoff: float = 1e-9):
+        &#34;&#34;&#34;
+        Get a renewal process with given probabilities.
+        &#34;&#34;&#34;
+        super().__init__(self.get_transitions(probs), cutoff=cutoff)
+        self.probs = probs
+
+    @staticmethod
+    def get_transitions(probs:list) -&gt; np.ndarray:
+        &#34;&#34;&#34;
+        Generate a renewal process with given probabilities.
+        &#34;&#34;&#34;
+        n = len(probs)+1
+
+        trans = np.zeros((2,n,n))
+
+        for i in range(n-1):
+            trans[0, i+1,i] = probs[i]
+            trans[1, 0, i] = 1-probs[i]
+        trans[1, 0, n-1] = 1
+
+        return trans</code></pre>
+</details>
+<div class="desc"><p>Renewal process class.</p>
+<p>Get a renewal process with given probabilities.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="stochprocq.hmm.HiddenMarkovModel" href="../hmm.html#stochprocq.hmm.HiddenMarkovModel">HiddenMarkovModel</a></li>
+<li><a title="stochprocq.meta.StochModel" href="../meta.html#stochprocq.meta.StochModel">StochModel</a></li>
+<li><a title="stochprocq.meta.IOProcess" href="../meta.html#stochprocq.meta.IOProcess">IOProcess</a></li>
+<li>abc.ABC</li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="stochprocq.Models.renewal.RenewalProcess.get_transitions"><code class="name flex">
+<span>def <span class="ident">get_transitions</span></span>(<span>probs: list) ‑> numpy.ndarray</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def get_transitions(probs:list) -&gt; np.ndarray:
+    &#34;&#34;&#34;
+    Generate a renewal process with given probabilities.
+    &#34;&#34;&#34;
+    n = len(probs)+1
+
+    trans = np.zeros((2,n,n))
+
+    for i in range(n-1):
+        trans[0, i+1,i] = probs[i]
+        trans[1, 0, i] = 1-probs[i]
+    trans[1, 0, n-1] = 1
+
+    return trans</code></pre>
+</details>
+<div class="desc"><p>Generate a renewal process with given probabilities.</p></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="stochprocq.hmm.HiddenMarkovModel" href="../hmm.html#stochprocq.hmm.HiddenMarkovModel">HiddenMarkovModel</a></b></code>:
+<ul class="hlist">
+<li><code><a title="stochprocq.hmm.HiddenMarkovModel.classical_bd" href="../hmm.html#stochprocq.hmm.HiddenMarkovModel.classical_bd">classical_bd</a></code></li>
+<li><code><a title="stochprocq.hmm.HiddenMarkovModel.classical_state" href="../hmm.html#stochprocq.hmm.HiddenMarkovModel.classical_state">classical_state</a></code></li>
+<li><code><a title="stochprocq.hmm.HiddenMarkovModel.dim" href="../meta.html#stochprocq.meta.IOProcess.dim">dim</a></code></li>
+<li><code><a title="stochprocq.hmm.HiddenMarkovModel.encode_state" href="../meta.html#stochprocq.meta.StochModel.encode_state">encode_state</a></code></li>
+<li><code><a title="stochprocq.hmm.HiddenMarkovModel.entropy" href="../hmm.html#stochprocq.hmm.HiddenMarkovModel.entropy">entropy</a></code></li>
+<li><code><a title="stochprocq.hmm.HiddenMarkovModel.evolve" href="../meta.html#stochprocq.meta.StochModel.evolve">evolve</a></code></li>
+<li><code><a title="stochprocq.hmm.HiddenMarkovModel.gen_dists" href="../hmm.html#stochprocq.hmm.HiddenMarkovModel.gen_dists">gen_dists</a></code></li>
+<li><code><a title="stochprocq.hmm.HiddenMarkovModel.gen_str" href="../meta.html#stochprocq.meta.StochModel.gen_str">gen_str</a></code></li>
+<li><code><a title="stochprocq.hmm.HiddenMarkovModel.input_alphabet_size" href="../meta.html#stochprocq.meta.IOProcess.input_alphabet_size">input_alphabet_size</a></code></li>
+<li><code><a title="stochprocq.hmm.HiddenMarkovModel.is_possible" href="../meta.html#stochprocq.meta.StochModel.is_possible">is_possible</a></code></li>
+<li><code><a title="stochprocq.hmm.HiddenMarkovModel.output_alphabet_size" href="../meta.html#stochprocq.meta.IOProcess.output_alphabet_size">output_alphabet_size</a></code></li>
+<li><code><a title="stochprocq.hmm.HiddenMarkovModel.prob_seq" href="../meta.html#stochprocq.meta.StochModel.prob_seq">prob_seq</a></code></li>
+<li><code><a title="stochprocq.hmm.HiddenMarkovModel.shape" href="../meta.html#stochprocq.meta.IOProcess.shape">shape</a></code></li>
+<li><code><a title="stochprocq.hmm.HiddenMarkovModel.steady_state" href="../meta.html#stochprocq.meta.StochModel.steady_state">steady_state</a></code></li>
+<li><code><a title="stochprocq.hmm.HiddenMarkovModel.sum_probs" href="../meta.html#stochprocq.meta.IOProcess.sum_probs">sum_probs</a></code></li>
+<li><code><a title="stochprocq.hmm.HiddenMarkovModel.tensor" href="../meta.html#stochprocq.meta.IOProcess.tensor">tensor</a></code></li>
+<li><code><a title="stochprocq.hmm.HiddenMarkovModel.transitions" href="../hmm.html#stochprocq.hmm.HiddenMarkovModel.transitions">transitions</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="stochprocq.Models" href="index.html">stochprocq.Models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="stochprocq.Models.renewal.get_bio_renewal" href="#stochprocq.Models.renewal.get_bio_renewal">get_bio_renewal</a></code></li>
+<li><code><a title="stochprocq.Models.renewal.get_uniform_renewal" href="#stochprocq.Models.renewal.get_uniform_renewal">get_uniform_renewal</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="stochprocq.Models.renewal.RenewalProcess" href="#stochprocq.Models.renewal.RenewalProcess">RenewalProcess</a></code></h4>
+<ul class="">
+<li><code><a title="stochprocq.Models.renewal.RenewalProcess.get_transitions" href="#stochprocq.Models.renewal.RenewalProcess.get_transitions">get_transitions</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

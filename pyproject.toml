@@ -1,0 +1,28 @@
+[project]
+name = "stochprocq"
+version = "0.1.0"
+description = "Simulation of (Quantum) stochastic processes"
+readme = "README.md"
+authors = [
+    { name = "Ximing Wang", email = "canoming@163.com" },
+    { name = "Chengran Yang", email = "yangchengran92@gmail.com" },
+]
+requires-python = ">=3.12"
+dependencies = [
+    "scipy>=1.15.2",
+    "torch>=2.6.0",
+]
+
+[project.scripts]
+stochprocq = "stochprocq:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "marimo>=0.13.0",
+    "pdoc3>=0.11.6",
+    "watchdog>=6.0.0",
+]

@@ -8,35 +8,35 @@ import json
 
 import numpy as np
 
-# def int2seq(i:int, steps:int) -> str:
-#     """
-#     Convert an integer into a binary sequence with given length.
+def int2seq(i:int, steps:int) -> str:
+    """
+    Convert an integer into a binary sequence with given length.
 
-#     Parameters:
-#     --------------------
-#     i: the integer to be converted.
-#     steps: the length of the sequence.
+    Parameters:
+    --------------------
+    i: the integer to be converted.
+    steps: the length of the sequence.
 
-#     Return:
-#     --------------------
-#     seq: the binary sequence.
-#     """
-#     return f'{i:0{steps}b}'
+    Return:
+    --------------------
+    seq: the binary sequence.
+    """
+    return f'{i:0{steps}b}'
 
-# def seq2int(seq:str,base=2) -> int:
-#     """
-#     Convert a binary sequence into an integer.
+def seq2int(seq:str,base=2) -> int:
+    """
+    Convert a binary sequence into an integer.
 
-#     Parameters:
-#     --------------------
-#     seq: the binary sequence.
-#     base: the base of the integer.
+    Parameters:
+    --------------------
+    seq: the binary sequence.
+    base: the base of the integer.
 
-#     Return:
-#     --------------------
-#     i: the integer to be converted.
-#     """
-#     return int(seq,base=base)
+    Return:
+    --------------------
+    i: the integer to be converted.
+    """
+    return int(seq,base=base)
 
 # %% classes
 class NumpyEncoder(json.JSONEncoder):

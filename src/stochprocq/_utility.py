@@ -38,6 +38,18 @@ def seq2int(seq:str,base=2) -> int:
     """
     return int(seq,base=base)
 
+def window(seq:list, size:int, step:int):
+    """
+    Returns a sliding window (of width `size`) over data from the iterable.
+    The step size is given by `step`.
+
+    example:
+    seq = [1,2,3,4,5]; size = 3; step = 2;
+    result = [(1,2,3),(3,4,5)]
+    """
+    for i in range(0,len(seq) - size + 1,step):
+        yield seq[i:i+size]
+
 # %% classes
 class NumpyEncoder(json.JSONEncoder):
     """

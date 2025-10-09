@@ -17,13 +17,13 @@ def imports():
 
 @app.cell
 def _(MPS, get_bio_renewal, get_uniform_renewal):
-    model = get_uniform_renewal(1)
-    model2 = get_bio_renewal(1)
+    model = get_uniform_renewal(2)
+    model2 = get_bio_renewal(2)
     mps = MPS.from_hmm(model)
     return model, model2, mps
 
 
-@app.cell(disabled=True)
+@app.cell()
 def _(model):
     model.classical_bd(4)
     return

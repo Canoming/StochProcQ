@@ -5,25 +5,27 @@ This module contains functions to compute various measures between probability d
 import numpy as np
 from scipy.stats import entropy
 
-def kl_div(p:np.ndarray, q:np.ndarray) -> float:
+def _check_len(p:np.array, q:np.array):
     """
-    Compute the Kullback-Leibler divergence between two probability distributions.
+    Check if the two distributions have the same length and return the number of bits.
 
-    Parameters:
-    -------------------
-    p: np.ndarray
-        The first probability distribution.
-    q: np.ndarray
-        The second probability distribution.
+    Parameters
+    ----------
+    p : np.array
+        The first distribution.
+    q : np.array
+        The second distribution.
 
-    Return:
-    ----------------
-    kl: float
-        The Kullback-Leibler divergence between the two distributions.
+    Returns
+    -------
+    n : int
+        The number of bits.
+
+    Raises
+    -------
+    ValueError
+        If the two distributions have different lengths.
     """
-    return np.sum(p * np.log(p / q), axis=-1)
-
-def check_len(p:np.array, q:np.array):
     if len(p) != len(q):
         raise ValueError(
             f"""The shape of the two distributions are not consistent:
@@ -55,7 +57,7 @@ def eval_diverge(
     divergence: float
         The KL-divergence value.
     """
-    n = check_len(p_dist,q_dist)
+    n = _check_len(p_dist,q_dist)
 
     if his_steps is not None:
         p_dist_cond = p_dist.reshape((2**his_steps,-1)).copy()
@@ -93,7 +95,7 @@ def eval_log_fid(
     fidelity: float
         The fidelity value.
     """
-    n = check_len(p_dist,q_dist)
+    n = _check_len(p_dist,q_dist)
 
     if his_steps is not None:
         p_dist_cond = p_dist.reshape((2**his_steps,-1)).copy()
@@ -138,7 +140,7 @@ def eval_nll(
     nll: float
         The negative log-likelihood value.
     """
-    n = check_len(p_dist,q_dist)
+    n = _check_len(p_dist,q_dist)
 
     if his_steps is not None:
         p_dist_cond = p_dist.reshape((2**his_steps,-1)).copy()

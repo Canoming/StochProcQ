@@ -138,7 +138,6 @@ class HiddenMarkovModel(StochModel):
         
         Parameters:
         --------------------
-        model: the model to be compared.
         length: the length of the generated distribution.
         target_dim: the number of clusters in the target distribution.
         base: the base of the entropy.
@@ -345,7 +344,7 @@ class MPS(StochModel):
         mat = self.tensor.reshape(udim, self.dim)
 
         for j in range(self.dim):
-            col_index = j*self.dim
+            col_index = j*self.output_alphabet_size
             distilled[:, col_index] = mat[:, j]
 
         w, _, vh = LA.svd(distilled, full_matrices=False)

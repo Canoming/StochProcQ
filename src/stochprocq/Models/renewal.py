@@ -10,6 +10,8 @@ class RenewalProcess(HiddenMarkovModel):
     def __init__(self, probs: list, cutoff: float = 1e-9):
         """
         Get a renewal process with given probabilities.
+
+        Note that the number of states is len(probs) + 1.
         """
         super().__init__(self.get_transitions(probs), cutoff=cutoff)
         self.probs = probs
